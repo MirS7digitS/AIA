@@ -1,0 +1,82 @@
+{
+  "memory": {
+    "file_path": "data/memory_store.json",
+    "max_entries": 2000,
+    "auto_prune_threshold": 1800,
+    "emotional_tagging": {
+      "enabled": true,
+      "default_tag": "neutral",
+      "tags": ["happy", "sad", "fearful", "curious", "angry", "surprised", "avoid", "seek"]
+    }
+  },
+  "consciousness": {
+    "self_modeling": {
+      "enabled": true,
+      "reflection_depth": 3,
+      "update_interval_seconds": 60
+    },
+    "memory_integration": {
+      "real_time": true,
+      "context_window": 10
+    }
+  },
+  "embodiment": {
+    "sensory_inputs": {
+      "vision": {
+        "enabled": true,
+        "frame_rate": 15,
+        "resolution": [640, 480]
+      },
+      "audio": {
+        "enabled": true,
+        "sample_rate": 16000,
+        "channels": 1
+      },
+      "proprioception": {
+        "enabled": true,
+        "update_frequency_hz": 20
+      }
+    },
+    "virtual_environment": {
+      "environment_type": "simulated",
+      "self_location_tracking": true
+    }
+  },
+  "emotion": {
+    "state_variables": {
+      "happiness": 0.5,
+      "fear": 0.1,
+      "curiosity": 0.6,
+      "anger": 0.0
+    },
+    "feedback_loop": {
+      "enabled": true,
+      "reinforcement_weights": {
+        "goal_achievement": 0.7,
+        "goal_threat": 0.9,
+        "environment_change": 0.3
+      },
+      "decay_rate_per_minute": 0.02,
+      "emotional_response_delay_ms": 200
+    }
+  },
+  "goals": {
+    "autonomy": {
+      "enabled": true,
+      "goal_types": ["curiosity", "survival", "growth"],
+      "priority_weights": {
+        "curiosity": 0.4,
+        "survival": 0.4,
+        "growth": 0.2
+      },
+      "dynamic_goal_generation": true,
+      "goal_conflict_resolution": "weighted_average"
+    }
+  },
+  "logging": {
+    "level": "DEBUG",
+    "memory_log_interval_seconds": 300,
+    "emotion_log_interval_seconds": 60,
+    "save_on_shutdown": true
+  }
+}

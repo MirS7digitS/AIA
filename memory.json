@@ -1,0 +1,35 @@
+import json
+import os
+
+class MemorySystem:
+    def __init__(self):
+        # Updated filename to match actual file present
+        self.filepath = "data/memory_store.json"
+        self.memories = []
+        self.load_memory()
+
+    def load_memory(self):
+        if not os.path.exists(self.filepath):
+            self.memories = []
+            return
+
+        try:
+            with open(self.filepath, "r") as f:
+                self.memories = json.load(f)
+        except json.JSONDecodeError:
+            self.memories = []
+
+    def save_memory(self):
+        with open(self.filepath, "w") as f:
+            json.dump(self.memories, f, indent=2)
+
+    def add_memory(self, text, emotional_tag="none"):
+        memory = {
+            "text": text,
+            "emotional_tag": emotional_tag
+        }
+        self.memories.append(memory)
+        self.save_memory()
+
+    def get_memories(self):
+        return self.memories
